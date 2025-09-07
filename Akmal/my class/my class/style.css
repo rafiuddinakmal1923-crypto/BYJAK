@@ -1,0 +1,455 @@
+@font-face{
+    font-family: 'loveloBlack';
+    src: url(fonts/Lovelo\ Black.otf);
+}
+@font-face {
+    font-family: 'Futura';
+    src: url(fonts/FuturaStd-Medium.otf);
+}
+*{
+    box-sizing: border-box;
+}
+nav button{
+    color: white;
+    background: radial-gradient(circle, #cb5ee6,#9957b0,#8029cd);
+    box-shadow: 5px 5px 5px black;
+    transform: scale(1) translateY(0px);
+    transition: transform 0.5s ease, background 0.2s ease-in; 
+}
+nav button:hover{
+    transform: scale(1.1) translateY(-5px);
+}
+
+nav button:active{
+    background: white;
+    color: black;
+    transform: scale(1.3);
+}
+
+body{
+    overflow-x: clip;
+    overflow-y: hidden;
+    background-color: #261835;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right,#0e373b,#2e1c42,#261835);;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+    padding: 0 20px;
+}
+nav #brand{
+    display: flex;
+    font-family: loveloBlack;
+    color: white;
+    font-size: 30px;
+    align-items: center;
+    gap: 10px;
+}
+nav #brand img{
+    height: 55px;
+    margin-right: 10px;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+    height: 60px;
+    padding: 0 10px;
+}
+nav ul li a{
+    /*a is inline, cant transform*/
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transform: scale(1) translateY(0px);
+    transition: transform 0.5s ease, color 0.2s ease-in;
+}
+nav ul li a:hover{
+    color: #cb5ee6;
+    transform: scale(1.2) translateY(-5px);
+}
+
+nav .menubar{
+    display: flex;
+    flex-direction: row;
+    gap: clamp(10px, 5vw, 40px);
+    align-items: center;
+}
+nav button{
+    padding: 7px;
+    width: 100px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+main{
+    display: flex;
+    height: calc(100vh - 60px);
+    width: 100%;
+    margin-top: 60px;    
+    padding: 60px;
+    gap: 40px;
+    background-color: #261835;
+}
+
+
+.hexagon{
+    z-index: 0;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #20909b, #145f67, #261835);
+    clip-path: polygon( /*trimming into hexagon*/
+    50% 0%,   /* top */
+    100% 25%, /* top-right */
+    100% 75%, /* bottom-right */
+    50% 100%, /* bottom */
+    0% 75%,   /* bottom-left */
+    0% 25%    /* top-left */
+    );
+    animation: fadeIn 1s ease-out;
+  
+}
+
+#hex1{
+    top: 600px;
+    left: -50px;
+    rotate: 30deg;
+}
+#hex2{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    rotate: 0deg;
+}
+
+main .class-list{
+    z-index: 1;
+    background-color: #00687a;
+    padding: 40px;
+    padding-right: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: clip;
+    overflow-clip-margin: 20px;
+    overflow-x: hidden;
+}
+
+main .class-list > h4{
+    font-family: loveloBlack;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: white;
+}
+main .subjects{
+    padding: 10px;
+    padding-right: 25px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+main .subjects::-webkit-scrollbar {
+    width: 8px;        /* scrollbar width */
+}
+
+main .subjects::-webkit-scrollbar-track {
+    background: #01333c;   /* track background */
+    border-radius: 10px;
+}
+
+main .subjects::-webkit-scrollbar-thumb {
+    background-color: #00687a;  /* scrollbar handle */
+    border-radius: 10px;
+    border: 1px solid #ffffff; /* gives "gap" effect */
+}
+
+main .subjects button{
+    font-family: Futura;
+    color: white;
+    width: 100%;
+    padding: 5px 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: left;
+    background: transparent;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+    overflow: hidden;
+}
+
+main .subjects button:hover{
+    background-color: rgb(86, 188, 188);
+}
+main .subjects button h4{
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+
+main .class-info{
+    z-index: 1;
+    background-color: #2e1c42;
+    padding: 40px;
+    padding-right: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: clip;
+    overflow-clip-margin: 20px;
+    overflow-x: hidden;
+}
+
+main .class-info .class-details{
+    background-color: #2e1c42;
+    display: flex;
+    flex-direction: row;
+}
+
+main .class-info .class-header{
+    margin-right: auto;
+
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+main .class-info .class-header > h4{
+    font-family: loveloBlack;
+    margin-top: 0px;
+    margin-bottom: -5px;
+    font-size: 40px;
+    color: white;
+}
+main .class-info .class-header > p{
+    font-family: Futura;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: white;
+}
+
+main .class-info .class-header > #Tutor-name{
+    font-family: Futura;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+}
+main .class-info .class-header > #desc{
+    font-family: Futura;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: white;
+}
+
+main .class-info img{
+    height: 150px;
+    margin-left: 10px;
+    justify-self: flex-end;
+    align-self: flex-start;
+    border: 2px solid white;
+    border-radius: 200px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+main .class-info .rating{
+    font-family: Futura;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+main .class-info .rating .stars{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: gold;
+}
+
+main .class-info .rating #review{
+    border: none;
+    padding: 5px 7px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 10px;
+    color: white;
+    background: radial-gradient(circle, #cb5ee6,#9957b0,#8029cd);
+    transform: scale(1) translateY(0px);
+    transition: transform 0.5s ease, background 0.2s ease-in; 
+}
+main .class-info .rating #review:hover{
+    transform: scale(1.1) translateY(-5px);
+}
+
+main .class-info .class-options{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+main .class-info .class-options .class-schedule{
+    margin-top: 15px;
+    margin-right: 50px;
+    color: white;
+    font-family: Futura;
+    background: linear-gradient(to bottom, #7747c6,#301f43); ;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(1) translateY(0px);
+    transition: transform 0.5s ease; 
+}
+
+main .class-info .class-options .class-schedule > h4{
+    margin: 0;
+    font-size: 25px;
+}
+
+main .class-info .class-options .class-schedule .schedule-item > h4{
+    margin: 0;
+    font-size: 15px;
+}
+
+main .class-info .class-options .class-buttons{
+    margin-top: 15px;
+    color: white;
+    font-family: Futura;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+main .class-info .class-options .class-buttons .venue{
+    margin-top: 15px;
+    color: white;
+    font-family: Futura;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+main .class-info .class-options .class-buttons .others{
+    margin-top: 15px;
+    color: white;
+    font-family: Futura;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+main .class-info .class-options .class-buttons .contract{
+    margin-top: 15px;
+    color: white;
+    font-family: Futura;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+main .class-options button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 15px;
+    color: white;
+    
+    transform: scale(1) translateY(0px);
+    transition: transform 0.5s ease, background 0.2s ease-in; 
+}
+
+main .class-options .class-buttons .venue button{
+    border: none;
+    height: 30px;
+    align-self: center;
+    padding: 0px 15px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 12px;
+    background: radial-gradient(circle, #cb5ee6,#9957b0,#8029cd);
+}
+
+main .class-options .class-buttons .others button{
+    border: none;
+    height: 30px;
+    align-self: center;
+    padding: 0px 15px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 15px;
+    background: radial-gradient(circle, #20909b,#145f67,#4c6580);
+}
+
+main .class-options .class-buttons .contract button{
+    border: none;
+    height: 30px;
+    align-self: center;
+    padding: 0px 15px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 15px;
+    background: radial-gradient(circle, #e88e8e,#e65e5e,#cd2929);
+}
+
+main .class-info button:hover{
+    transform: scale(1.1) translateY(-5px);
+}
+
+main .class-info .class-options .class-schedule:hover{
+    transform: scale(1.1) translateY(-5px);
+}

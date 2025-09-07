@@ -1,0 +1,209 @@
+@font-face {
+    font-family: loveloBlack;
+    src: url(fonts/Lovelo\ Black.otf);
+}
+*{
+    box-sizing: border-box;
+}
+button{
+    box-shadow: 5px 5px 5px black;
+}
+
+body{
+    overflow-x: clip;
+    background-color: #261835;
+    margin: 0;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /*highest layer*/
+    padding: 0 20px;
+    background: linear-gradient(to right,#0e373b,#2e1c42,#261835);
+    display: flex; /*table format of items*/
+    flex-direction: row; /*horizontally*/
+    justify-content: space-between; 
+    height: 60px;
+    align-items: center;
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+header #username{
+    
+    width: 150px;
+    border-radius: 7px;
+    padding: 6px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: radial-gradient(circle, #cb5ee6,#9957b0,#8029cd);
+    
+}
+#logo{
+    height: 60px;
+}
+.menubar{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(10px, 5vw, 40px);;
+}
+.menubar h4{
+    font-family: loveloBlack;
+    font-size: 30px;
+    color: white;
+}
+.menu{
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px
+}
+.menu a{
+    color: white;
+    text-decoration: none; /*remove underline*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+
+}
+.brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/*main*/
+main{
+    background-color: #261835;
+}
+main .greetings{
+    text-shadow: 2px 2px 5px rgb(99, 99, 99);
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: loveloBlack;
+    font-size: 25px;
+    color: white;
+    position: relative;
+    top: 160px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+main .greetings h1{
+    margin-bottom: -5px;
+    animation-name: slideUp;
+    animation-duration: 1s;
+}
+main .greetings p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation-name: slideUp;
+    animation-duration: 1s;
+}
+main #getstarted{
+    width: 120px;
+    height: 40px;
+    border-radius: 7px;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: radial-gradient(circle, #cb5ee6,#9957b0,#8029cd);
+    animation-name: slideUp;
+    animation-duration: 2s;
+}
+
+.hexagon{
+    z-index: 0;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #20909b, #145f67, #261835);
+    clip-path: polygon( /*trimming into hexagon*/
+    50% 0%,   /* top */
+    100% 25%, /* top-right */
+    100% 75%, /* bottom-right */
+    50% 100%, /* bottom */
+    0% 75%,   /* bottom-left */
+    0% 25%    /* top-left */
+    );
+    animation: fadeIn 1s ease-out;
+  
+}
+
+#hex1{
+    top: 600px;
+    left: -50px;
+    rotate: 30deg;
+}
+#hex2{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    rotate: 0deg;
+}
+
+.section1{
+    padding: 5%;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    height: 400px;
+}
+.title1{
+    font-family: loveloBlack;
+    font-size: 60px;
+    color: #261835;
+}
+.section1 p{
+    width: 70%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.spacer{
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+}
+/*animations*/
+@keyframes fadeIn{
+    from{
+        opacity: 0; 
+        transform: scale(0.5);
+    }
+}
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translateY(-60px); /* start off-screen left */
+    }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0); /* end at original position */
+  }
+}
+
+@keyframes slideUp {
+    from{
+        opacity: 0;
+        transform: translateY(60px); /* start off-screen left */
+    }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0); /* end at original position */
+  }
+}
+

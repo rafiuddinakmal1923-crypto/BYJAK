@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYJAK Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="../images/WhatsApp_Image_2025-08-29_at_23.12.20_3cceacae-removebg-preview.png" alt="Logo BYJAK" class="logo">
+  <div class="container">
+   
+    <div class="right">
+      <h2>WELCOME BACK</h2>
+      <p>Please enter your details to sign in</p>
+
+      <div class="input-group">
+        <input type="text" placeholder="Username or email">
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="options">
+        <label>
+          <input type="checkbox" id="showPassword"> Show password
+        </label>
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button class="btn signin">Sign in</button>
+      <button class="btn register" onclick="window.location.href='register.html'">
+  Register
+</button>
+
+    </div>
+  </div>
+
+  <script>
+    
+    const checkbox = document.getElementById("showPassword");
+    const passwordField = document.getElementById("password");
+
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    });
+  </script>
+</body>
+</html>
+
